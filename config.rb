@@ -13,7 +13,7 @@ set :haml, { :format => :html5 }
 
 activate :external_pipeline,
    name: :webpack,
-   command: build? ? 'npm run build' : 'npm run start',
+   command: build? ? 'yarn build' : 'yarn start',
    source: '.tmp/dist',
    latency: 1
 
