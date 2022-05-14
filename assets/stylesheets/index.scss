@@ -44,12 +44,16 @@ html {
       margin: auto;
       backdrop-filter: blur(5px);
       box-shadow: $box-shadow;
+
+      a {
+        word-break: break-all;
+      }
     }
 
     .page-wrapper {
       padding: $spacer;
 
-      h1, h2 {
+      h1, h2, h3, h4, h5 {
         line-height: 1;
         padding-bottom: 0;
         margin-bottom: $spacer;
