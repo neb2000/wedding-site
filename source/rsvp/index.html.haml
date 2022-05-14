@@ -1,0 +1,23 @@
+---
+title: RSVP - Jon and Shuo's wedding
+---
+%script{ src: 'https://www.google.com/recaptcha/api.js?render=6LensIQfAAAAACMPaOr8HXs25IPktcbr-xMipoT6' }
+
+.page-wrapper
+  %h1 RSVP
+  %form{ name: 'rsvp-form' }
+    .form-floating.mb-3
+      %select.form-select#attending-field{ name: 'Attending', required: true }
+        %option{ value: 'Yes' } Yes
+        %option{ value: 'No' } No
+      %label{ for: 'attending-field' } Will you be attending?
+
+    .form-floating.mb-3
+      %input.form-control#name-field{ name: 'Names', type: :text, placeholder: 'Name of Guest(s)', required: true }
+      %label{ for: 'name-field' } Name of Guest(s)
+
+    .form-floating.mb-3
+      %textarea.form-control#dietrary-requirement-field{ name: 'DietaryRequirements', rows: 2, placeholder: 'Any dietary requirements?' }
+      %label{ for: 'dietrary-requirement-field' } Any dietary requirements?
+
+    %button.btn.btn-primary#submit-button.mt-md-3{ type: :submit } &check; Save

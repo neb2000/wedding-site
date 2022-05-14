@@ -17,6 +17,8 @@ activate :external_pipeline,
    source: '.tmp/dist',
    latency: 1
 
+activate :directory_indexes
+
 config[:js_dir] = 'assets/javascripts'
 config[:css_dir] = 'assets/stylesheets'
 

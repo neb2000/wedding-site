@@ -4,20 +4,27 @@ $light-gold: lighten($gold, 30%);
 $body-color: #495057;
 $link-decoration: none;
 
+$border-radius: 0;
+
+$primary: $gold;
+
+$form-floating-label-opacity: 1;
+
 @import "~bootstrap/scss/_functions.scss";
 @import "~bootstrap/scss/_variables.scss";
+
 @import "~bootstrap/scss/_mixins.scss";
 @import "~bootstrap/scss/_utilities.scss";
 
-// Layout & components
 @import "~bootstrap/scss/_root.scss";
 @import "~bootstrap/scss/_reboot.scss";
 @import "~bootstrap/scss/_type.scss";
 
-// Helpers
+@import "~bootstrap/scss/_forms.scss";
+@import "~bootstrap/scss/_buttons.scss";
+
 @import "~bootstrap/scss/_helpers.scss";
 
-// Utilities
 @import "~bootstrap/scss/utilities/_api.scss";
 
 html {
@@ -44,22 +51,43 @@ html {
       font-weight: 100;
     }
 
-    .banner {
+    .page-wrapper, .banner {
       border: 1rem solid #fff;
-      padding: $spacer * 2;
       background-color: rgba(#fff, 0.9);
       width: 100%;
       max-width: 800px;
       margin: auto;
       backdrop-filter: blur(5px);
       box-shadow: $box-shadow;
+    }
+
+    .page-wrapper {
+      padding: $spacer;
+
+      h1 {
+        line-height: 1;
+        padding-bottom: 0;
+        margin-bottom: $spacer;
+        font-weight: 300;
+      }
+
+      @include media-breakpoint-up(md) {
+        padding: $spacer * 2;
+
+        h1 {
+          margin-bottom: $spacer * 2;
+        }
+      }
+    }
+
+    .banner {
+      padding: $spacer * 2;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
 
       h1 {
-        line-height: 1;
         padding-bottom: $spacer;
         margin-bottom: $spacer;
         border-bottom: 1px solid $light-gold;
@@ -97,6 +125,46 @@ html {
         color: $body-color;
         border-bottom: 1px dotted $light-gold;
       }
+    }
+  }
+}
+
+.form-floating {
+  >label {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: $gray-600;
+    max-width: 100%;
+  }
+
+  >select.form-select:not(:focus):not(:valid):not(:disabled) {
+    ~label {
+      transform: none;
+      font-weight: 400;
+      color: $gray-600;
+    }
+  }
+
+  >.form-control.show-placeholder:focus {
+    &::placeholder {
+      color: $input-placeholder-color;
+    }
+  }
+
+  >.form-control:focus,
+  >.form-control:not(:placeholder-shown),
+  >.form-select {
+    ~label {
+      color: $primary;
+      font-weight: 600;
+    }
+  }
+
+  >.form-control:-webkit-autofill {
+    ~label {
+      color: $primary;
+      font-weight: 600;
     }
   }
 }
