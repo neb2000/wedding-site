@@ -109,8 +109,6 @@ PLATFORMS
 DEPENDENCIES
   middleman (~> 4.2)
   middleman-autoprefixer (~> 2.7)
-  tzinfo-data
-  wdm (~> 0.1)
 
 BUNDLED WITH
    2.3.7

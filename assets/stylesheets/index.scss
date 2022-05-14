@@ -10,22 +10,7 @@ $primary: $gold;
 
 $form-floating-label-opacity: 1;
 
-@import "~bootstrap/scss/_functions.scss";
-@import "~bootstrap/scss/_variables.scss";
-
-@import "~bootstrap/scss/_mixins.scss";
-@import "~bootstrap/scss/_utilities.scss";
-
-@import "~bootstrap/scss/_root.scss";
-@import "~bootstrap/scss/_reboot.scss";
-@import "~bootstrap/scss/_type.scss";
-
-@import "~bootstrap/scss/_forms.scss";
-@import "~bootstrap/scss/_buttons.scss";
-
-@import "~bootstrap/scss/_helpers.scss";
-
-@import "~bootstrap/scss/utilities/_api.scss";
+@import "~bootstrap/scss/bootstrap";
 
 html {
   @supports (-webkit-touch-callout: none) {
@@ -64,7 +49,7 @@ html {
     .page-wrapper {
       padding: $spacer;
 
-      h1 {
+      h1, h2 {
         line-height: 1;
         padding-bottom: 0;
         margin-bottom: $spacer;
@@ -121,12 +106,22 @@ html {
         }
       }
 
-      a {
+      .action-row {
+        align-self: stretch;
+        margin-top: 1rem;
+      }
+
+      a.banner-link {
         color: $body-color;
         border-bottom: 1px dotted $light-gold;
       }
     }
   }
+}
+
+.btn-default {
+  background-color: #fff;
+  @include button-outline-variant($primary);
 }
 
 .form-floating {
