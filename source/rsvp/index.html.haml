@@ -20,4 +20,7 @@ title: RSVP - Jon and Shuo's wedding
       %textarea.form-control#dietrary-requirement-field{ name: 'DietaryRequirements', rows: 2, placeholder: 'Any dietary requirements?' }
       %label{ for: 'dietrary-requirement-field' } Any dietary requirements?
 
-    %button.btn.btn-primary#submit-button.mt-md-3{ type: :submit } &check; Save
+    %hr
+    .d-flex.mt-md-3.align-items-center
+      %button.btn.btn-primary#submit-button{ type: :submit } &check; Save
+      = link_to "&laquo; Back", '/', class: 'ms-auto'
