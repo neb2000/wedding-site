@@ -13,19 +13,12 @@ $form-floating-label-opacity: 1;
 @import "~bootstrap/scss/bootstrap";
 
 html {
-  @supports (-webkit-touch-callout: none) {
-    height: -webkit-fill-available;
-  }
-
+  padding: env(safe-area-inset);
   body {
-    background: #1d4634 url(../images/background.webp) no-repeat center center fixed;
-    background-size: cover;
     min-height: 100vh;
 
-    @supports (-webkit-touch-callout: none) {
-      background: #1d4634 url(../images/background.jpg) no-repeat center center fixed;
-      min-height: -webkit-fill-available;
-    }
+    background: #1d4634 url(../images/background.webp) no-repeat center center fixed;
+    background-size: cover;
 
     padding: $spacer;
 
