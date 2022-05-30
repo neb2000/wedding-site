@@ -23,6 +23,7 @@ html {
     min-height: 100vh;
 
     @supports (-webkit-touch-callout: none) {
+      background: #1d4634 url(../images/background.jpg) no-repeat center center fixed;
       min-height: -webkit-fill-available;
     }
 
