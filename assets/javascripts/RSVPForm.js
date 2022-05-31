@@ -9,13 +9,19 @@ document.addEventListener('DOMContentLoaded', () => {
       submitButton.disabled = true;
       submitButton.innerHTML = 'Saving...'
 
+      const formData = new FormData(form);
+      fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+
+      const attending = formData.get('Attending') === 'Yes';
+
       e.preventDefault()
 
       grecaptcha.ready(async () => {
         await grecaptcha.execute(reCAPTCHAKey, { action: 'submit' })
-
-        const formData = new FormData(form);
-        const attending = formData.get('Attending') === 'Yes';
 
         const response = await fetch(scriptURL, { method: 'POST', body: formData });
         if (response.status == 200) {
